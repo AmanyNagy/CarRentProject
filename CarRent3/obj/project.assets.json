@@ -7631,23 +7631,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/aminaibrahim/.nuget/packages/": {}
+    "/Users/amanialshami/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/aminaibrahim/Desktop/CarRentProject/CarRent3/CarRent3.csproj",
+      "projectUniqueName": "/Users/amanialshami/Projects/CarRent3/CarRent3/CarRent3.csproj",
       "projectName": "CarRent3",
-      "projectPath": "/Users/aminaibrahim/Desktop/CarRentProject/CarRent3/CarRent3.csproj",
-      "packagesPath": "/Users/aminaibrahim/.nuget/packages/",
-      "outputPath": "/Users/aminaibrahim/Desktop/CarRentProject/CarRent3/obj/",
+      "projectPath": "/Users/amanialshami/Projects/CarRent3/CarRent3/CarRent3.csproj",
+      "packagesPath": "/Users/amanialshami/.nuget/packages/",
+      "outputPath": "/Users/amanialshami/Projects/CarRent3/CarRent3/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-<<<<<<< HEAD
         "/Users/amanialshami/.nuget/NuGet/NuGet.Config"
-=======
-        "/Users/aminaibrahim/.nuget/NuGet/NuGet.Config"
->>>>>>> ffa406b9a7cebb95ff71c179dd056882cb476d51
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7714,6 +7710,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-x64",
+            "version": "[5.0.12, 5.0.12]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7722,16 +7724,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /Users/aminaibrahim/Desktop/CarRentProject/CarRent3/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

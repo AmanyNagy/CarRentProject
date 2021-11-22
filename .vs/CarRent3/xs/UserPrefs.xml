@@ -1,26 +1,31 @@
-﻿<Properties StartupConfiguration="{B2177610-DA5C-4CB0-AEAE-12E9373D0C60}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CarRent3/Controllers/CarController.cs">
+﻿<Properties StartupConfiguration="{DEB1B6F9-3D6D-468D-B86C-B136FBC9B7A3}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CarRent3/Dto/CarModelDto.cs">
     <Files>
-      <File FileName="CarRent3/Controllers/CarController.cs" Line="37" Column="31" />
-      <File FileName="CarRent3/Program.cs" />
-      <File FileName="CarRent3/Startup.cs" Line="95" Column="63" />
-      <File FileName="CarRent3/Controllers/HomeController.cs" />
-      <File FileName="CarRent3/Controllers/AuthenticateController.cs" Line="77" Column="34" />
-      <File FileName="CarRent3/Model/Clinet.cs" Line="1" Column="1" />
-      <File FileName="CarRent3/appsettings.json" Line="11" Column="5" />
-      <File FileName="CarRent3/Model/Car.cs" Line="22" Column="39" />
-      <File FileName="CarRent3/Model/Payment.cs" Line="1" Column="1" />
-      <File FileName="CarRent3/Model/ViCarForCategorty.cs" Line="1" Column="1" />
+      <File FileName="CarRent3/Controllers/CarController.cs" Line="102" Column="29" />
+      <File FileName="CarRent3/Model/CarRentdbContext.cs" Line="9" Column="42" />
+      <File FileName="CarRent3/Startup.cs" Line="40" Column="51" />
+      <File FileName="CarRent3/Program.cs" Line="16" Column="1" />
+      <File FileName="CarRent3/appsettings.json" Line="21" Column="1" />
+      <File FileName="CarRent3/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="CarRent3/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="CarRent3/Dto/CarModel.cs" Line="6" Column="1" />
+      <File FileName="CarRent3/Dto/CarDto.cs" Line="16" Column="1" />
+      <File FileName="CarRent3/Dto/CarCategoriesDto.cs" Line="6" Column="2" />
+      <File FileName="CarRent3/Controllers/AuthenticateController.cs" Line="1" Column="1" />
+      <File FileName="CarRent3/Controllers/HomeController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CarRent3" expanded="True">
             <Node name="CarRent3" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="CarController.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Dto" expanded="True">
+                <Node name="CarModelDto.cs" selected="True" />
               </Node>
               <Node name="Model" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>

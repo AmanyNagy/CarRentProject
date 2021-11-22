@@ -9,7 +9,7 @@ namespace CarRent3.Dto
         public string Type { get; set; }
         public int? Year { get; set; }
         public string Color { get; set; }
-        public int? DailyRentPrice { get; set; }
-        public int? Category { get; set; }
+        public decimal? DailyRentPrice { get; set; }
+        public string? categoryname { get; set; }
     }
 }

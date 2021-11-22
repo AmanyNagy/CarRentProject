@@ -14,9 +14,9 @@ namespace CarRent3.Controllers
     [ApiController]
     public class CarController : ControllerBase
     {
-        private readonly CarRentContext _context;
+        private readonly CarRentdbContext _context;
 
-        public CarController(CarRentContext context)
+        public CarController(CarRentdbContext context)
         {
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace CarRent3.Controllers
             var result = await _context.Cars.ToListAsync();
 
             cars = result.Select(x => new CarDto { CarId = x.CarId,
-                Category = x.Category,
+                categoryname = x.Categoryname,
                 Model = x.Model,
                 Compny = x.Compny,
                 Color = x.Color,
@@ -42,42 +42,64 @@ namespace CarRent3.Controllers
             return cars;
         }
 
-        public class Filter {
 
-            public int? catId { get; set; }
-            public string? modelName { get; set; }
-            public bool? isAvailability { get; set; }
+
+
+        [HttpGet("Models")]
+        public async Task<ActionResult<IEnumerable<CarModelDto>>> GetModel()
+        {
+            List<CarModelDto> cars = new List<CarModelDto>();
+
+            var result = await _context.Cars.ToListAsync();
+
+            cars = result.Select(x => new CarModelDto
+            {
+                Model = x.Model
+            }).ToList();
+
+            return cars;
         }
+        [HttpGet("Categories")]
+        public async Task<ActionResult<IEnumerable<CarCategoriesDto>>> GetGategories()
+        {
+            List<CarCategoriesDto> cars = new List<CarCategoriesDto>();
 
+            var result = await _context.Cars.ToListAsync();
+
+            cars = result.Select(x => new CarCategoriesDto
+            {
+                categoryname = x.Categoryname
+            }).Distinct().ToList();
+
+            return cars;
+        }
         // GET: api/Car
-        //[HttpGet("filter/catId={catId}/modelName={modelName}/availabe={isAvailability?}")]
-        [HttpGet("/filter")]
-        public async Task<ActionResult<IEnumerable<CarDto>>> GetCarsByfilter(Filter filter)
+        [HttpGet("filter/{catname}/{modelName}/{isAvailability?}")]
+        public async Task<ActionResult<IEnumerable<CarDto>>> GetCarsByfilter(string? catname, string? modelName, bool? isAvailability)
         {
             List<CarDto> cars = new List<CarDto>();
             List<Car> result;
 
-            if (filter.isAvailability == null)
-            {
-                result = await _context.Cars.Where(x => filter.catId == null | x.Category == filter.catId &&
-                                                   filter.modelName == null | x.Model == filter.modelName
-                                                    ).ToListAsync();
-            }
+            if (isAvailability == null)
+                result = await _context.Cars.Where(x => catname == null | x.Categoryname == catname &&
+                  modelName == null | x.Model == modelName
+                ).ToListAsync();
             else
             {
-                result = (from c in _context.Cars
-                          join inv in _context.Inventories on c.CarId equals inv.CarId
-                          where inv.Availability == filter.isAvailability &&
-                          filter.catId == null | c.Category == filter.catId &&
-                          filter.modelName == null | c.Model == filter.modelName
-                          select c).ToList();
+                var availability = (from c in _context.Cars
+                                    join inv in _context.Inventories on c.CarId equals inv.CarId
+                                    where inv.Availability == isAvailability
+                                    select c);
+
+                result = await availability.Where(x => catname == null | x.Categoryname == catname &&
+                 modelName == null | x.Model == modelName
+               ).ToListAsync();
             }
-         
 
             cars = result.Select(x => new CarDto
             {
                 CarId = x.CarId,
-                Category = x.Category,
+                categoryname = x.Categoryname,
                 Model = x.Model,
                 Compny = x.Compny,
                 Color = x.Color,
@@ -85,10 +107,9 @@ namespace CarRent3.Controllers
                 DailyRentPrice = x.DailyRentPrice,
                 Type = x.Type
             }).ToList();
-        
+
             return cars;
         }
-
 
 
         // GET: api/Car/5

@@ -37,7 +37,7 @@ namespace CarRent3
                     .AllowAnyHeader();
             }));
             services.AddControllersWithViews();
-            services.AddDbContext<CarRentContext>(options =>
+            services.AddDbContext<CarRentdbContext>(options =>
 
           options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
