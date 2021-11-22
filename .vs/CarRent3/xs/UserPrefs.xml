@@ -1,28 +1,33 @@
 ﻿<Properties StartupConfiguration="{B2177610-DA5C-4CB0-AEAE-12E9373D0C60}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CarRent3/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CarRent3/Controllers/CarController.cs">
     <Files>
       <File FileName="CarRent3/Startup.cs" Line="93" Column="1" />
-      <File FileName="CarRent3/Controllers/AuthenticateController.cs" Line="34" Column="22" />
+      <File FileName="CarRent3/Controllers/AuthenticateController.cs" />
       <File FileName="CarRent3/Authentication/UserRoles.cs" />
       <File FileName="CarRent3/Authentication/LoginModel.cs" />
       <File FileName="CarRent3/Authentication/ApplicationUser.cs" />
       <File FileName="CarRent3/Program.cs" Line="16" Column="1" />
-      <File FileName="CarRent3/appsettings.json" Line="16" Column="21" />
-      <File FileName="CarRent3/Authentication/ApplicationDbContext.cs" Line="1" Column="1" />
-      <File FileName="CarRent3/Controllers/CarController.cs" Line="49" Column="26" />
-      <File FileName="CarRent3/Dto/CarDto.cs" Line="5" Column="6" />
-      <File FileName="CarRent3/Model/Car.cs" Line="16" Column="6" />
-      <File FileName="CarRent3/Model/CarRentContext.cs" Line="1" Column="1" />
+      <File FileName="CarRent3/appsettings.json" />
+      <File FileName="CarRent3/Authentication/ApplicationDbContext.cs" />
+      <File FileName="CarRent3/Controllers/CarController.cs" Line="62" Column="1" />
+      <File FileName="CarRent3/Dto/CarDto.cs" />
+      <File FileName="CarRent3/Model/Car.cs" />
+      <File FileName="CarRent3/Model/CarRentContext.cs" />
+      <File FileName="CarRent3/Authentication/RegisterModel.cs" />
+      <File FileName="CarRent3/Model/ViCarForCategorty.cs" />
+      <File FileName="CarRent3/Model/Inventory.cs" />
+      <File FileName="CarRent3/Controllers/HomeController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CarRent3" expanded="True">
             <Node name="CarRent3" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Dto" expanded="True" />
+              <Node name="Authentication" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="CarController.cs" selected="True" />
+              </Node>
               <Node name="Model" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>
