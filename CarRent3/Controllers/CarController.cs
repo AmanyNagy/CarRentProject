@@ -45,30 +45,28 @@ namespace CarRent3.Controllers
 
 
         // GET: api/Car
-        [HttpGet("filter/{catId}/{modelName}/{isAvailability?}")]
+        [HttpGet("filter/catId={catId}/modelName={modelName}/availabe={isAvailability?}")]
         public async Task<ActionResult<IEnumerable<CarDto>>> GetCarsByfilter(int? catId, string modelName , bool? isAvailability)
         {
             List<CarDto> cars = new List<CarDto>();
-            List<Car> result  ;
-            
-            if (isAvailability == null)
-             result = await _context.Cars.Where(x => catId == null | x.Category == catId &&
-                                                             modelName == null | x.Model == modelName
-                                                             ).ToListAsync();
+            List<Car> result;
 
+            if (isAvailability == null)
+            {
+                result = await _context.Cars.Where(x => catId == null | x.Category == catId &&
+                                                   modelName == null | x.Model == modelName
+                                                    ).ToListAsync();
+            }
             else
             {
-               var availability = (from c in _context.Cars
-                                    join inv in _context.Inventories on c.CarId equals inv.CarId
-                                    where inv.Availability == isAvailability
-                                    select c);
-
-                        result = await availability.Where(x => catId == null | x.Category == catId &&
-                                                       modelName == null | x.Model == modelName
-                                                       ).ToListAsync();
-                    }
-
-            
+                result = (from c in _context.Cars
+                          join inv in _context.Inventories on c.CarId equals inv.CarId
+                          where inv.Availability == isAvailability &&
+                          catId == null | c.Category == catId &&
+                          modelName == null | c.Model == modelName
+                          select c).ToList();
+            }
+         
 
             cars = result.Select(x => new CarDto
             {
@@ -82,7 +80,6 @@ namespace CarRent3.Controllers
                 Type = x.Type
             }).ToList();
         
-
             return cars;
         }
 
