@@ -42,28 +42,34 @@ namespace CarRent3.Controllers
             return cars;
         }
 
+        public class Filter {
 
+            public int? catId { get; set; }
+            public string? modelName { get; set; }
+            public bool? isAvailability { get; set; }
+        }
 
         // GET: api/Car
-        [HttpGet("filter/catId={catId}/modelName={modelName}/availabe={isAvailability?}")]
-        public async Task<ActionResult<IEnumerable<CarDto>>> GetCarsByfilter(int? catId, string modelName , bool? isAvailability)
+        //[HttpGet("filter/catId={catId}/modelName={modelName}/availabe={isAvailability?}")]
+        [HttpGet("/filter")]
+        public async Task<ActionResult<IEnumerable<CarDto>>> GetCarsByfilter(Filter filter)
         {
             List<CarDto> cars = new List<CarDto>();
             List<Car> result;
 
-            if (isAvailability == null)
+            if (filter.isAvailability == null)
             {
-                result = await _context.Cars.Where(x => catId == null | x.Category == catId &&
-                                                   modelName == null | x.Model == modelName
+                result = await _context.Cars.Where(x => filter.catId == null | x.Category == filter.catId &&
+                                                   filter.modelName == null | x.Model == filter.modelName
                                                     ).ToListAsync();
             }
             else
             {
                 result = (from c in _context.Cars
                           join inv in _context.Inventories on c.CarId equals inv.CarId
-                          where inv.Availability == isAvailability &&
-                          catId == null | c.Category == catId &&
-                          modelName == null | c.Model == modelName
+                          where inv.Availability == filter.isAvailability &&
+                          filter.catId == null | c.Category == filter.catId &&
+                          filter.modelName == null | c.Model == filter.modelName
                           select c).ToList();
             }
          

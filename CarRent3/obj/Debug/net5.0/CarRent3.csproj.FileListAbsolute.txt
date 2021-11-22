@@ -169,3 +169,4 @@
 /Users/amanialshami/Projects/CarRent3/CarRent3/bin/Debug/net5.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 /Users/amanialshami/Projects/CarRent3/CarRent3/bin/Debug/net5.0/Microsoft.Extensions.Identity.Core.dll
 /Users/amanialshami/Projects/CarRent3/CarRent3/bin/Debug/net5.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/amanialshami/Projects/CarRent3/CarRent3/bin/Debug/net5.0/CarRent3

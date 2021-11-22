@@ -9,8 +9,8 @@ namespace CarRent3.Model
     {
         public Car()
         {
-            Carts = new HashSet<Cart>();
             Inventories = new HashSet<Inventory>();
+            Orders = new HashSet<Order>();
         }
 
         public int CarId { get; set; }
@@ -19,11 +19,10 @@ namespace CarRent3.Model
         public string Type { get; set; }
         public int? Year { get; set; }
         public string Color { get; set; }
-        public int? DailyRentPrice { get; set; }
-        public int? Category { get; set; }
+        public decimal? DailyRentPrice { get; set; }
+        public string Categoryname { get; set; }
 
-        public virtual Category CategoryNavigation { get; set; }
-        public virtual ICollection<Cart> Carts { get; set; }
         public virtual ICollection<Inventory> Inventories { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
