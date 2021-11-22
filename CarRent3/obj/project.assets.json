@@ -7631,19 +7631,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/amanialshami/.nuget/packages/": {}
+    "/Users/aminaibrahim/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/amanialshami/Projects/CarRent3/CarRent3/CarRent3.csproj",
+      "projectUniqueName": "/Users/aminaibrahim/Desktop/CarRentProject/CarRent3/CarRent3.csproj",
       "projectName": "CarRent3",
-      "projectPath": "/Users/amanialshami/Projects/CarRent3/CarRent3/CarRent3.csproj",
-      "packagesPath": "/Users/amanialshami/.nuget/packages/",
-      "outputPath": "/Users/amanialshami/Projects/CarRent3/CarRent3/obj/",
+      "projectPath": "/Users/aminaibrahim/Desktop/CarRentProject/CarRent3/CarRent3.csproj",
+      "packagesPath": "/Users/aminaibrahim/.nuget/packages/",
+      "outputPath": "/Users/aminaibrahim/Desktop/CarRentProject/CarRent3/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/amanialshami/.nuget/NuGet/NuGet.Config"
+        "/Users/aminaibrahim/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7710,12 +7710,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.osx-x64",
-            "version": "[5.0.12, 5.0.12]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7724,7 +7718,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
       }
     }
   }
