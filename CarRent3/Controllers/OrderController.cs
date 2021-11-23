@@ -81,6 +81,14 @@ namespace CarRent3.Controllers
         [HttpPost]
         public async Task<ActionResult<OrderDto>> PostOrder(Order order)
         {
+            //TODO: Check Date Availiable
+            /*inventroy if av = false
+               date = select from
+
+              if order.FromDate > date 
+                Done
+            else */
+                    
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
 
@@ -98,7 +106,7 @@ namespace CarRent3.Controllers
                 ClientId = order.ClientId
             }; 
 
-            
+            //TODO: update History and inventroy 
 
             return CreatedAtAction("GetOrder", new { id = order.OrderId }, neworder);
         }
