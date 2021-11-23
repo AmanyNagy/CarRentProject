@@ -79,20 +79,29 @@ namespace CarRent3.Controllers
         // POST: api/Order
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<OrderDto>> PostOrder(OrderDto order)
+        public async Task<ActionResult<OrderDto>> PostOrder(Order order)
         {
-            List<OrderDto> orders = new List<OrderDto>();
-
-            orders.Add(order);
-
-
-
-           // _context.Orders.Add();
+            _context.Orders.Add(order);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetOrder", new { id = order.OrderId }, order);
-        }
 
+            var neworder = new OrderDto()
+            {
+                CarId = order.CarId,
+                Statue = order.Statue,
+                PaymentId = order.PaymentId,
+                FromDate = order.FromDate,
+                ToDate = order.ToDate,
+                OrderSubmitDate = order.OrderSubmitDate,
+                CityId  = order.CityId,
+                DestinationAddress = order.DestinationAddress,
+                ClientId = order.ClientId
+            }; 
+
+            
+
+            return CreatedAtAction("GetOrder", new { id = order.OrderId }, neworder);
+        }
 
 
 
