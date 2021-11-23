@@ -73,8 +73,8 @@ namespace CarRent3.Controllers
 
             return cars;
         }
-        // GET: api/Car
-        [HttpGet("filter/{catname}/{modelName}/{isAvailability?}")]
+        // GET: api/Car/filter/catname={catname}/modelName={modelName}/isAvailability={isAvailability?}
+        [HttpGet("filter/catname={catname}/modelName={modelName}/isAvailability={isAvailability}")]
         public async Task<ActionResult<IEnumerable<CarDto>>> GetCarsByfilter(string? catname, string? modelName, bool? isAvailability)
         {
             List<CarDto> cars = new List<CarDto>();
@@ -86,14 +86,14 @@ namespace CarRent3.Controllers
                 ).ToListAsync();
             else
             {
-                var availability = (from c in _context.Cars
+                 result = (from c in _context.Cars
                                     join inv in _context.Inventories on c.CarId equals inv.CarId
-                                    where inv.Availability == isAvailability
-                                    select c);
+                                    where inv.Availability == isAvailability &&
+                                    catname == null | c.Categoryname == catname &&
+                                    modelName == null | c.Model == modelName
+                                    select c).ToList();
 
-                result = await availability.Where(x => catname == null | x.Categoryname == catname &&
-                 modelName == null | x.Model == modelName
-               ).ToListAsync();
+  
             }
 
             cars = result.Select(x => new CarDto

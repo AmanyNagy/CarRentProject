@@ -7643,7 +7643,7 @@
       "outputPath": "/Users/amanialshami/Projects/CarRent3/CarRent3/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/amanialshami/.nuget/NuGet/NuGet.Config"
+        "/Users/amanialshami/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

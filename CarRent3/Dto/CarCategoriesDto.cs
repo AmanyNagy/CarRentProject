@@ -1,6 +1,6 @@
 ﻿public class CarCategoriesDto
 {
 
-    public string? Categoryname { get; set; }
+    public string? categoryname { get; set; }
 
 }
