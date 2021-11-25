@@ -1,5 +1,8 @@
-﻿public class CarModelDto
+﻿namespace CarRent3.Dto
 {
-    public string Model { get; set; }
+    public class CarModelDto
+    {
+        public string Model { get; set; }
 
+    }
 }

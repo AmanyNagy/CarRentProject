@@ -50,7 +50,7 @@ namespace CarRent3.Controllers
         {
             List<CarModelDto> cars = new List<CarModelDto>();
 
-            var result = await _context.Cars.ToListAsync();
+            var result = await _context.VwDistinctModels.ToListAsync();
 
             cars = result.Select(x => new CarModelDto
             {
@@ -62,16 +62,16 @@ namespace CarRent3.Controllers
         [HttpGet("Categories")]
         public async Task<ActionResult<IEnumerable<CarCategoriesDto>>> GetGategories()
         {
-            List<CarCategoriesDto> cars = new List<CarCategoriesDto>();
+            List<CarCategoriesDto> categories = new List<CarCategoriesDto>();
 
-            var result = await _context.Cars.ToListAsync();
+            var result = await _context.VwDistinctCategories.ToListAsync();
 
-            cars = result.Select(x => new CarCategoriesDto
+            categories = result.Select(x => new CarCategoriesDto
             {
                 categoryname = x.Categoryname
-            }).Distinct().ToList();
+            }).ToList();
 
-            return cars;
+            return categories;
         }
         // GET: api/Car/filter/catname={catname}/modelName={modelName}/isAvailability={isAvailability?}
         [HttpGet("filter/catname={catname}/modelName={modelName}/isAvailability={isAvailability}")]

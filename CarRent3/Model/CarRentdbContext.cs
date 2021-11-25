@@ -24,6 +24,8 @@ namespace CarRent3.Model
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
+        public virtual DbSet<VwDistinctCategory> VwDistinctCategories { get; set; }
+        public virtual DbSet<VwDistinctModel> VwDistinctModels { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -149,6 +151,20 @@ namespace CarRent3.Model
                     .WithMany(p => p.Payments)
                     .HasForeignKey(d => d.ClientId)
                     .HasConstraintName("FK_Payment_Clinet");
+            });
+
+            modelBuilder.Entity<VwDistinctCategory>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("vw_distinctCategories");
+            });
+
+            modelBuilder.Entity<VwDistinctModel>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("vw_distinctModel");
             });
 
             OnModelCreatingPartial(modelBuilder);
