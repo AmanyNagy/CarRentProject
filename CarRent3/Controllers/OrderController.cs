@@ -24,9 +24,30 @@ namespace CarRent3.Controllers
 
         // GET: api/Order
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
+        public async Task<ActionResult<IEnumerable<OrderDto>>> GetOrders()
         {
-            return await _context.Orders.ToListAsync();
+            List<OrderDto> orders = new List<OrderDto>();
+
+
+
+            var result = await _context.Orders.ToListAsync();
+            orders = result.Select(x => new OrderDto
+            {
+                OrderId = x.OrderId,
+                PaymentId = x.PaymentId,
+                Statue = x.Statue,
+                CarId = x.CarId,
+                CityId = x.CityId,
+                ClientId = x.ClientId,
+                DestinationAddress = x.DestinationAddress,
+                FromDate = x.FromDate,
+                ToDate = x.ToDate,
+                OrderSubmitDate = x.OrderSubmitDate
+
+
+
+            }).ToList();
+            return orders;
         }
 
         // GET: api/Order/5
@@ -82,7 +103,7 @@ namespace CarRent3.Controllers
         public async Task<ActionResult<OrderDto>> PostOrder(Order order)
         {
 
-
+            // Date Validtion 
 
             var Date = _context.Inventories.Select(x => x.AvalibleDate).FirstOrDefault();
             if (order.FromDate < Date | order.FromDate < DateTime.Now | order.ToDate < order.FromDate)
