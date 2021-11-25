@@ -1,46 +1,32 @@
 ﻿<Properties StartupConfiguration="{DEB1B6F9-3D6D-468D-B86C-B136FBC9B7A3}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CarRent3/Controllers/AuthenticateController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CarRent3/Dto/UserLogin.cs">
     <Files>
-      <File FileName="CarRent3/Controllers/OrderController.cs" Line="78" Column="20" />
+      <File FileName="CarRent3/Controllers/CarController.cs" Line="32" Column="52" />
+      <File FileName="CarRent3/Controllers/OrderController.cs" Line="111" Column="16" />
+      <File FileName="CarRent3/Controllers/AuthenticateController.cs" Line="79" Column="1" />
+      <File FileName="CarRent3/Dto/CarModelDto.cs" Line="1" Column="1" />
       <File FileName="CarRent3/Dto/OrderDto.cs" Line="1" Column="1" />
-      <File FileName="CarRent3/Model/Order.cs" />
-      <File FileName="CarRent3/Dto/CarDto.cs" Line="3" Column="1" />
-      <File FileName="CarRent3/Dto/CarModelDto.cs" Line="8" Column="2" />
-      <File FileName="CarRent3/Controllers/CarController.cs" Line="48" Column="25" />
+      <File FileName="CarRent3/Controllers/ClientController.cs" Line="122" Column="47" />
+      <File FileName="CarRent3/Dto/ClientDto.cs" Line="6" Column="8" />
+      <File FileName="CarRent3/Model/Clinet.cs" Line="19" Column="16" />
       <File FileName="CarRent3/Model/Car.cs" Line="1" Column="1" />
-      <File FileName="CarRent3/Model/Payment.cs" />
-      <File FileName="CarRent3/Model/Location.cs" />
-      <File FileName="CarRent3/Model/Inventory.cs" />
-      <File FileName="CarRent3/Model/History.cs" />
-      <File FileName="CarRent3/Model/Clinet.cs" />
-      <File FileName="CarRent3/Model/CarRentdbContext.cs" Line="28" Column="63" />
-      <File FileName="CarRent3/Model/AspNetUserToken.cs" />
       <File FileName="CarRent3/Controllers/HomeController.cs" Line="1" Column="1" />
-      <File FileName="CarRent3/Startup.cs" />
+      <File FileName="CarRent3/Model/AspNetRole.cs" Line="1" Column="1" />
+      <File FileName="CarRent3/Dto/CarDto.cs" Line="1" Column="1" />
+      <File FileName="CarRent3/Dto/CarCategoriesDto.cs" Line="1" Column="1" />
       <File FileName="CarRent3/Program.cs" Line="16" Column="1" />
-      <File FileName="CarRent3/appsettings.json" />
-      <File FileName="CarRent3/Controllers/AuthenticateController.cs" Line="1" Column="1" />
-      <File FileName="CarRent3/Authentication/Response.cs" />
-      <File FileName="CarRent3/Model/VwDistinctCategory.cs" Line="11" Column="1" />
-      <File FileName="CarRent3/Dto/CarCategoriesDto (copy).cs" Line="7" Column="2" />
-      <File FileName="CarRent3/Dto/CarModelDto (copy).cs" Line="8" Column="2" />
-      <File FileName="CarRent3/Model/AspNetUserClaim.cs" Line="1" Column="1" />
-      <File FileName="CarRent3/Model/VwDistinctModel.cs" Line="8" Column="41" />
-      <File FileName="CarRent3/Authentication/ApplicationDbContext.cs" Line="1" Column="1" />
-      <File FileName="CarRent3/Authentication/ApplicationUser.cs" Line="1" Column="1" />
+      <File FileName="CarRent3/Dto/UserLogin.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CarRent3" expanded="True">
             <Node name="CarRent3" expanded="True">
-              <Node name="Authentication" expanded="True" />
-              <Node name="Controllers" expanded="True">
-                <Node name="AuthenticateController.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Dto" expanded="True">
+                <Node name="UserLogin.cs" selected="True" />
               </Node>
-              <Node name="Dto" expanded="True" />
               <Node name="Model" expanded="True" />
-              <Node name="Properties" expanded="True" />
               <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>

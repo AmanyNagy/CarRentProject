@@ -151,6 +151,66 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Create new client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"UserName\":\"AmaniAlshami2\",\n                \"Password\" :\"Amani222!\",\n                \"Moblie\": 987654399,\n                \"Email\" : \"Amani@gamil.com\",\n                \"Adress\" : \"Qassim\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Client/rigestr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Client",
+						"rigestr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                \"UserName\":\"AmaniAlshami29\",\n                \"Password\" :\"Amani22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Client/Login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Client",
+						"Login"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
