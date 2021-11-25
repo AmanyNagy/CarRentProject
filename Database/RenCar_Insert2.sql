@@ -66,19 +66,18 @@ from LOCATION
 
 
 --Insert data into Inventory table
-Insert into Inventory values (1,1, 0,'2020-05-22' )
-Insert into Inventory values (2,2,0,'2020-03-22' ) 
+Insert into Inventory values (1,1, 0,'2021-12-22' )
+Insert into Inventory values (2,2,0,'2021-12-25' ) 
 Insert into Inventory values (3,2, 1,NULL )
 Insert into Inventory values (4,3, 1,NULL)
-Insert into Inventory values (2,3, 0, '2021-07-25')
-Insert into Inventory values (5,1, 0,'2021-03-04' )
+Insert into Inventory values (5,1, 0,'2021-11-30' )
 Insert into Inventory values (9,2, 1,NULL )
 Insert into Inventory values (8,3, 1,NULL )
-Insert into Inventory values (4,2, 1,NULL)
 Insert into Inventory values (7,1,0,'2021-12-30' ) 
 
 select *
 from Inventory
+
 
 -----
 
