@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using CarRent3.Model;
 using CarRent3.Dto;
 using JWTAuthentication.Authentication;
+using CarRent3.Repositories;
+using AutoMapper;
 
 namespace CarRent3.Controllers
 {
@@ -16,40 +18,28 @@ namespace CarRent3.Controllers
     public class OrderController : ControllerBase
     {
         private readonly CarRentdbContext _context;
+        private readonly ICarRentRepo _carRentRepo;
+        private readonly IMapper _mapper;
 
-        public OrderController(CarRentdbContext context)
+
+        public OrderController(CarRentdbContext context, ICarRentRepo carRentRepo,
+            IMapper mapper)
         {
             _context = context;
+            _carRentRepo = carRentRepo ??
+                throw new ArgumentNullException(nameof(carRentRepo));
+            _mapper = mapper ??
+                throw new ArgumentNullException(nameof(mapper));
         }
 
         // GET: api/Order
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<OrderDto>>> GetOrders()
+        public ActionResult<IEnumerable<OrderDto>> GetOrders()
         {
-            List<OrderDto> orders = new List<OrderDto>();
-
-
-
-            var result = await _context.Orders.ToListAsync();
-            orders = result.Select(x => new OrderDto
-            {
-                OrderId = x.OrderId,
-                PaymentId = x.PaymentId,
-                Statue = x.Statue,
-                CarId = x.CarId,
-                CityId = x.CityId,
-                ClientId = x.ClientId,
-                DestinationAddress = x.DestinationAddress,
-                FromDate = x.FromDate,
-                ToDate = x.ToDate,
-                OrderSubmitDate = x.OrderSubmitDate
-
-
-
-            }).ToList();
-            return orders;
+            var OrdersFromRepo = _carRentRepo.GetOrders();
+            return Ok(_mapper.Map<IEnumerable<OrderDto>>(OrdersFromRepo));
         }
-
+        
         // GET: api/Order/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Order>> GetOrder(int id)

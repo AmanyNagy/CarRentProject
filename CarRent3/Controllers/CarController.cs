@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CarRent3.Model;
 using CarRent3.Dto;
+using CarRent3.Repositories;
+using AutoMapper;
 
 namespace CarRent3.Controllers
 {
@@ -14,104 +16,47 @@ namespace CarRent3.Controllers
     [ApiController]
     public class CarController : ControllerBase
     {
-        private readonly CarRentdbContext _context;
+       private readonly CarRentdbContext _context;
+        private readonly ICarRentRepo _carRentRepo;
+        private readonly IMapper _mapper;
 
-        public CarController(CarRentdbContext context)
+
+        public CarController(CarRentdbContext context, ICarRentRepo carRentRepo,
+            IMapper mapper)
         {
-            _context = context;
+           _context = context;
+            _carRentRepo = carRentRepo ??
+                throw new ArgumentNullException(nameof(carRentRepo));
+            _mapper = mapper ??
+                throw new ArgumentNullException(nameof(mapper));
         }
 
        // GET: api/Car
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CarDto>>> GetCars()
-        {
-            List<CarDto> cars = new List<CarDto>();
+        public ActionResult<IEnumerable<CarDto>> GetCars(string catname, string modelName, bool? isAvailability)
+        { 
 
-            var result = await _context.Cars.ToListAsync();
+            var carsFromRepo = _carRentRepo.GetCars(catname, modelName, isAvailability);
+            return Ok(_mapper.Map<IEnumerable<CarDto>>(carsFromRepo));
 
-            cars = result.Select(x => new CarDto { CarId = x.CarId,
-                categoryname = x.Categoryname,
-                Model = x.Model,
-                Compny = x.Compny,
-                Color = x.Color,
-                Year = x.Year,
-                DailyRentPrice = x.DailyRentPrice,
-                Type = x.Type
-            }).ToList();
-
-            return cars;
         }
-
-
-
 
         [HttpGet("Models")]
-        public async Task<ActionResult<IEnumerable<CarModelDto>>> GetModel()
+        public ActionResult<IEnumerable<CarModelDto>> GetModel()
         {
-            List<CarModelDto> cars = new List<CarModelDto>();
+            var CarModelsFromRepo = _carRentRepo.GetModel();
+            return Ok(_mapper.Map<IEnumerable<CarModelDto>>(CarModelsFromRepo));
 
-            var result = await _context.VwDistinctModels.ToListAsync();
-
-            cars = result.Select(x => new CarModelDto
-            {
-                Model = x.Model
-            }).ToList();
-
-            return cars;
         }
+
         [HttpGet("Categories")]
-        public async Task<ActionResult<IEnumerable<CarCategoriesDto>>> GetGategories()
+        public ActionResult<IEnumerable<CarCategoriesDto>> GetGategories()
         {
-            List<CarCategoriesDto> categories = new List<CarCategoriesDto>();
-
-            var result = await _context.VwDistinctCategories.ToListAsync();
-
-            categories = result.Select(x => new CarCategoriesDto
-            {
-                categoryname = x.Categoryname
-            }).ToList();
-
-            return categories;
-        }
-        // GET: api/Car/filter/catname={catname}/modelName={modelName}/isAvailability={isAvailability?}
-        [HttpGet("filter/catname={catname}/modelName={modelName}/isAvailability={isAvailability}")]
-        public async Task<ActionResult<IEnumerable<CarDto>>> GetCarsByfilter(string? catname, string? modelName, bool? isAvailability)
-        {
-            List<CarDto> cars = new List<CarDto>();
-            List<Car> result;
-
-            if (isAvailability == null)
-                result = await _context.Cars.Where(x => catname == null | x.Categoryname == catname &&
-                  modelName == null | x.Model == modelName
-                ).ToListAsync();
-            else
-            {
-                 result = (from c in _context.Cars
-                                    join inv in _context.Inventories on c.CarId equals inv.CarId
-                                    where inv.Availability == isAvailability &&
-                                    catname == null | c.Categoryname == catname &&
-                                    modelName == null | c.Model == modelName
-                                    select c).ToList();
-
-  
-            }
-
-            cars = result.Select(x => new CarDto
-            {
-                CarId = x.CarId,
-                categoryname = x.Categoryname,
-                Model = x.Model,
-                Compny = x.Compny,
-                Color = x.Color,
-                Year = x.Year,
-                DailyRentPrice = x.DailyRentPrice,
-                Type = x.Type
-            }).ToList();
-
-            return cars;
+            var CarCategoriesFromRepo = _carRentRepo.GetCategories();
+            return Ok(_mapper.Map<IEnumerable<CarCategoriesDto>>(CarCategoriesFromRepo));
         }
 
-
+        /*
         // GET: api/Car/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Car>> GetCar(int id)
@@ -187,6 +132,6 @@ namespace CarRent3.Controllers
         private bool CarExists(int id)
         {
             return _context.Cars.Any(e => e.CarId == id);
-        }
+        }*/
     }
 }

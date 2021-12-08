@@ -345,3 +345,5 @@
 /Users/amanialshami/Projects/CarRent3/CarRent3/obj/Debug/net5.0/ref/CarRent3.dll
 /Users/amanialshami/Projects/CarRent3/CarRent3/obj/Debug/net5.0/CarRent3.pdb
 /Users/amanialshami/Projects/CarRent3/CarRent3/obj/Debug/net5.0/CarRent3.genruntimeconfig.cache
+/Users/amanialshami/Projects/CarRent3/CarRent3/bin/Debug/net5.0/AutoMapper.dll
+/Users/amanialshami/Projects/CarRent3/CarRent3/bin/Debug/net5.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

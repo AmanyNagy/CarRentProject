@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "LYzBFuaHod8csGiiZrR38xzJ1B3AslUE6rvgkyOrof7TFxyoXxsyCb41c3njqX/5AqLxQkOUozxqNfdQVjYahA==",
+  "dgSpecHash": "N6JzW+9o0Pt8N+M1riP0p6U0Of29ioeeXTKAI/Ln51jAsSbCcvofAT7LS/pnk25RTZOGdV7bW0gAwxIfhXNBMg==",
   "success": true,
   "projectFilePath": "/Users/amanialshami/Projects/CarRent3/CarRent3/CarRent3.csproj",
   "expectedPackageFiles": [
+    "/Users/amanialshami/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/Users/amanialshami/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.1/automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "/Users/amanialshami/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/amanialshami/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/5.0.4/microsoft.aspnetcore.authentication.jwtbearer.5.0.4.nupkg.sha512",
     "/Users/amanialshami/.nuget/packages/microsoft.aspnetcore.cryptography.internal/5.0.5/microsoft.aspnetcore.cryptography.internal.5.0.5.nupkg.sha512",
@@ -106,7 +108,7 @@
     "/Users/amanialshami/.nuget/packages/system.private.datacontractserialization/4.3.0/system.private.datacontractserialization.4.3.0.nupkg.sha512",
     "/Users/amanialshami/.nuget/packages/system.private.uri/4.3.2/system.private.uri.4.3.2.nupkg.sha512",
     "/Users/amanialshami/.nuget/packages/system.reflection/4.3.0/system.reflection.4.3.0.nupkg.sha512",
-    "/Users/amanialshami/.nuget/packages/system.reflection.emit/4.3.0/system.reflection.emit.4.3.0.nupkg.sha512",
+    "/Users/amanialshami/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
     "/Users/amanialshami/.nuget/packages/system.reflection.emit.ilgeneration/4.3.0/system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "/Users/amanialshami/.nuget/packages/system.reflection.emit.lightweight/4.3.0/system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
     "/Users/amanialshami/.nuget/packages/system.reflection.extensions/4.3.0/system.reflection.extensions.4.3.0.nupkg.sha512",
